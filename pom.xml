@@ -229,29 +229,6 @@
 			</plugin>
 
 			<plugin>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>2.4.1</version>
-				<configuration>
-					<filesets>
-						<fileset>
-							<directory>${basedir}</directory>
-							<includes>
-								<include>src/gen/</include>
-								<include>src/main/webapp/app/</include>
-								<include>src/main/webapp/WEB-INF/deploy/</include>
-								<include>src/main/webapp/WEB-INF/lib/</include>
-								<include>src/main/webapp/WEB-INF/classes/**/*.*</include>
-								<include>src/main/webapp/WEB-INF/classes/**/*</include>
-								<include>src/main/webapp/WEB-INF/classes</include>
-								<include>**/gwt-unitCache/**</include>
-								<include>.errai/</include>
-							</includes>
-						</fileset>
-					</filesets>
-				</configuration>
-			</plugin>
-
-			<plugin>
 			  <groupId>net.ltgt.gwt.maven</groupId>
 			  <artifactId>gwt-maven-plugin</artifactId>
 			  <version>1.0-rc-7</version>
@@ -260,27 +237,7 @@
   				<moduleName>washo.gmd.app.App</moduleName>
 			  </configuration>
 			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>${maven.war.plugin.version}</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-					<warName>${project.build.finalName}</warName>
-
-					<!-- Exclude GWT client local classes from the deployment, lest
-                      classpath scanners such as Hibernate and Weld get confused when the webapp
-                      is bootstrapping. -->
-					<packagingExcludes>**/javax/**/*.*,**/client/**/*.class</packagingExcludes>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>${maven.resources.plugin.version}</version>
-			</plugin>
+			
 		</plugins>
 
 		<pluginManagement>
@@ -290,33 +247,6 @@
                     <artifactId>appengine-maven-plugin</artifactId>
                     <version>${appengine.maven.version}</version>
                 </plugin>
-							
-				<!--This plugin's configuration is used to store Eclipse m2e settings
-                  only. It has no influence on the Maven build itself. -->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>net.ltgt.gwt.maven</groupId>
-										<artifactId>gwt-maven-plugin</artifactId>
-										<versionRange>[1.0-rc-7,)</versionRange>
-										<goals>
-											<goal>resources</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore></ignore>
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
