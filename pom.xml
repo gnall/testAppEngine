@@ -202,18 +202,6 @@
 			  <groupId>org.eclipse.jetty</groupId>
 			  <artifactId>jetty-maven-plugin</artifactId>
 			  <version>${jetty.maven.plugin}</version>
-			  <dependencies>
-		        <dependency>
-		            <groupId>org.ow2.asm</groupId>
-		            <artifactId>asm</artifactId>
-		            <version>5.0.2</version>
-		        </dependency>
-		        <dependency>
-		            <groupId>org.ow2.asm</groupId>
-		            <artifactId>asm-commons</artifactId>
-		            <version>5.0.2</version>
-		        </dependency>
-		      </dependencies>
 			</plugin>
 
 			<plugin>
@@ -225,6 +213,50 @@
   				<moduleName>washo.gmd.app.App</moduleName>
 			  </configuration>
 			</plugin>
+			
+			
+			 <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+              <execution>
+                <configuration>
+                  <skipITs>true</skipITs>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <!-- m2eclipse does not support errorprone -->
+          <plugin>
+            <groupId>org.eclipse.m2e</groupId>
+            <artifactId>lifecycle-mapping</artifactId>
+            <version>1.0.0</version>
+            <configuration>
+              <lifecycleMappingMetadata>
+                <pluginExecutions>
+                  <pluginExecution>
+                    <pluginExecutionFilter>
+                      <groupId>org.apache.maven.plugins</groupId>
+                      <artifactId>maven-compiler-plugin</artifactId>
+                      <versionRange>[3.3,)</versionRange>
+                      <goals>
+                        <goal>compile</goal>
+                        <goal>testCompile</goal>
+                      </goals>
+                      <parameters>
+                        <compilerId>javac-with-errorprone</compilerId>
+                      </parameters>
+                    </pluginExecutionFilter>
+                    <action>
+                      <configurator>
+                        <id>org.eclipse.m2e.jdt.javaConfigurator</id>
+                      </configurator>
+                    </action>
+                  </pluginExecution>
+                </pluginExecutions>
+              </lifecycleMappingMetadata>
+            </configuration>
+          </plugin>
 			
 		</plugins>
 
