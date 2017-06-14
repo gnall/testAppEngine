@@ -1,0 +1,62 @@
+.nav.nav-tabs {
+  border:none !important;
+}
+
+.find .nav-tabs > li > a, .profile .nav-tabs > li > a, .nav-tabs > li > a:focus, .nav-tabs > li > a:hover {
+  border:none !important;
+  border-radius:initial !important;
+}
+
+::-webkit-input-placeholder {
+  color:rgba(255,255,255,0.7);
+}
+
+:-moz-placeholder {
+  color:rgba(255,255,255,0.7);
+  opacity:1;
+}
+
+::-moz-placeholder {
+  color:rgba(255,255,255,0.7);
+  opacity:1;
+}
+
+:-ms-input-placeholder {
+  color:rgba(255,255,255,0.7);
+}
+
+::-ms-input-placeholder {
+  color:#ffffff;
+}
+
+input[type=search] {
+  color:#fff;
+  font-size:14px;
+  width:100%;
+  padding:10px;
+  border-style:none;
+}
+
+.playerstats button {
+  border:none;
+  background-image:none !important;
+  background-color:#e3be75 !important;
+  color:#fff;
+  text-shadow:none;
+}
+
+.profile .nav-tabs > li {
+  border:none;
+  border-radius:none;
+}
+
+.profile .nav-tabs > li {
+  margin-bottom:0px;
+}
+
+.profile .avatar {
+  box-shadow:2px 2px rgba(255,255,255,0.4);
+  height:24vh;
+  margin:0 auto;
+}
+

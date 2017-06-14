@@ -1,0 +1,18 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.1">
+
+  <servlet>
+    <servlet-name>gameServlet</servlet-name>
+    <servlet-class>washo.gmd.app.server.GameServiceImpl</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>gameServlet</servlet-name>
+    <url-pattern>/App/getGame</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>

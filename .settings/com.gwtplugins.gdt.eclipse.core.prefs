@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+gwtMavenModuleName=washo.gmd.app.App
+lastWarOutDir=/Users/josephgnall/Downloads/washo-gmd-app/target/washo-gmd-app-1.0-SNAPSHOT
+warSrcDir=src/main/webapp
+warSrcDirIsOutput=false
