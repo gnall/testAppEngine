@@ -64,7 +64,7 @@ public class FindPage extends Page
 		//if (this.phoneGap.isPhoneGapDevice()) 			
 		//	PhonegapUtil.prepareService((ServiceDefTarget) this.getGameService, SharedConstants.SERVICES_URL, "createEvent");
         
-        UListElement ul = Document.get().createULElement();
+        final UListElement ul = Document.get().createULElement();
         ul.setClassName("list-unstyled gameslist");
         upcomingGames.getElement().appendChild(ul);
         
@@ -73,7 +73,7 @@ public class FindPage extends Page
 			@Override
 			public void onSuccess(List<Game> result) 
 			{
-				for (Game game: result)
+				for (final Game game: result)
 				{
 			        LIElement li = Document.get().createLIElement();
 			        
