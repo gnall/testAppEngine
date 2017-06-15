@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
 
-public class Page implements IsElement
+public class Page
 {
     private String id;
 
